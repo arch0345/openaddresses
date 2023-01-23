@@ -1,0 +1,45 @@
+{
+    "coverage": {
+        "geometry": {
+            "type": "Point",
+            "coordinates": [
+                -122.913,
+                42.377
+            ]
+        },
+        "US Census": {
+            "geoid": "4112400",
+            "name": "City of Central Point",
+            "state": "Oregon"
+        },
+        "country": "us",
+        "state": "or",
+        "city": "Central Point"
+    },
+    "schema": 2,
+    "layers": {
+        "addresses": [
+            {
+                "name": "city",
+                "data": "https://services6.arcgis.com/Imn3nAubweATciML/ArcGIS/rest/services/Current_Taxlot/FeatureServer/0",
+                "protocol": "ESRI",
+                "conform": {
+                    "format": "geojson",
+                    "number": "ADDRESSNUM",
+                    "street": "STREETNAME"
+                }
+            }
+        ],
+        "parcels": [
+            {
+                "name": "city",
+                "data": "https://services6.arcgis.com/Imn3nAubweATciML/ArcGIS/rest/services/Current_Taxlot/FeatureServer/0",
+                "protocol": "ESRI",
+                "conform": {
+                    "format": "geojson",
+                    "pid": "MAPLOT"
+                }
+            }
+        ]
+    }
+}
