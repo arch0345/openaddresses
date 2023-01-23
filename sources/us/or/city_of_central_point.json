@@ -26,7 +26,23 @@
                 "conform": {
                     "format": "geojson",
                     "number": "ADDRESSNUM",
-                    "street": "STREETNAME"
+                    "street": "STREETNAME",
+                    "unit": {
+                        "function": "chain",
+                        "variable": "unit_wip",
+                        "functions": [
+                            {
+                                "function": "remove_prefix",
+                                "field": "SITEADD",
+                                "field_to_remove": "ADDRESSNUM"
+                            },
+                            {
+                                "function": "remove_prefix",
+                                "field": "unit_wip",
+                                "field_to_remove": "STREETNAME"
+                            }
+                        ]
+                    }
                 }
             }
         ],
