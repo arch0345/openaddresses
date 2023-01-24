@@ -1,0 +1,61 @@
+{
+    "coverage": {
+        "geometry": {
+            "type": "Point",
+            "coordinates": [
+                -122.715,
+                42.197
+            ]
+        },
+        "US Census": {
+            "geoid": "4102180",
+            "name": "City of Ashland",
+            "state": "Oregon"
+        },
+        "country": "us",
+        "state": "or",
+        "city": "Ashland"
+    },
+    "schema": 2,
+    "layers": {
+        "addresses": [
+            {
+                "name": "city",
+                "data": "https://gis.ashland.or.us/arcgis/rest/services/taxlots/MapServer/0",
+                "protocol": "ESRI",
+                "conform": {
+                    "format": "geojson",
+                    "number": "ADDRESSNUM",
+                    "street": "STREETNAME",
+                    "unit": {
+                        "function": "chain",
+                        "variable": "unit_wip",
+                        "functions": [
+                            {
+                                "function": "remove_prefix",
+                                "field": "SITEADD",
+                                "field_to_remove": "ADDRESSNUM"
+                            },
+                            {
+                                "function": "remove_prefix",
+                                "field": "unit_wip",
+                                "field_to_remove": "STREETNAME"
+                            }
+                        ]
+                    }
+                }
+            }
+        ],
+        "parcels": [
+            {
+                "name": "city",
+                "data": "https://gis.ashland.or.us/arcgis/rest/services/taxlots/MapServer/0",
+                "protocol": "ESRI",
+                "conform": {
+                    "format": "geojson",
+                    "pid": "MAPLOT"
+                }
+            }
+        ]
+    }
+}
