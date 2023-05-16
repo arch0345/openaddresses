@@ -1,0 +1,54 @@
+{
+    "coverage": {
+        "country": "ca",
+        "state": "bc",
+        "county": "Cariboo",
+        "geometry": {
+            "type": "Point",
+            "coordinates": [
+                -122,
+                52
+            ]
+        }
+    },
+    "schema": 2,
+    "layers": {
+        "addresses": [
+            {
+                "name": "county",
+                "data": "https://map.cariboord.bc.ca/server/rest/services/Public_Parcels_cityview/FeatureServer/0",
+                "protocol": "ESRI",
+                "conform": {
+                    "format": "geojson",
+                    "id": "OBJECTID",
+                    "number": [
+                        "streetno",
+                        "housesuf"
+                    ],
+                    "street": [
+                        "prefix",
+                        "strname",
+                        "strtype",
+                        "suffix"
+                    ],
+                    "unit": [
+                        "suite"
+                    ],
+                    "city": "comm",
+                    "region": "prov"
+                }
+            }
+        ],
+        "parcels": [
+            {
+                "name": "county",
+                "data": "https://map.cariboord.bc.ca/server/rest/services/Public_Parcels_cityview/FeatureServer/2",
+                "protocol": "ESRI",
+                "conform": {
+                    "format": "geojson",
+                    "pid": "PID"
+                }
+            }
+        ]
+    }
+}
